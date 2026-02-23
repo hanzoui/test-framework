@@ -522,7 +522,7 @@ paths:
           description: Name of the file to view
           schema:
             type: string
-            example: "Hanzo Studio_00004_.png"
+            example: "HanzoStudio_00004_.png"
         - name: subfolder
           in: query
           required: false
