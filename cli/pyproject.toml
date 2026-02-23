@@ -23,9 +23,9 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/hanzoui/studio-test-framework"
-Repository = "https://github.com/hanzoui/studio-test-framework"
-Issues = "https://github.com/hanzoui/studio-test-framework/issues"
+Homepage = "https://github.com/hanzoui/test-framework"
+Repository = "https://github.com/hanzoui/test-framework"
+Issues = "https://github.com/hanzoui/test-framework/issues"
 
 [project.scripts]
 comfyci = "comfyci:main"

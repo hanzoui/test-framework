@@ -18,7 +18,7 @@ Clone this repository into your Hanzo Studio custom nodes directory:
 
 ```bash
 cd HanzoStudio/custom_nodes
-git clone https://github.com/hanzoui/studio-test-framework.git
+git clone https://github.com/hanzoui/test-framework.git
 ```
 
 Restart Hanzo Studio to load the test nodes.
