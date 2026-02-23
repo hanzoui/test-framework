@@ -17,7 +17,7 @@ A testing framework for Hanzo Studio workflows. Provides custom nodes for defini
 Clone this repository into your Hanzo Studio custom nodes directory:
 
 ```bash
-cd Hanzo Studio/custom_nodes
+cd HanzoStudio/custom_nodes
 git clone https://github.com/hanzoui/studio-test-framework.git
 ```
 
@@ -28,7 +28,7 @@ Restart Hanzo Studio to load the test nodes.
 The CLI tool uses [uv](https://github.com/astral-sh/uv) for dependency management:
 
 ```bash
-cd Hanzo Studio-test-framework/cli
+cd HanzoStudio-test-framework/cli
 
 # Run directly with uv
 ./comfyci.py --help

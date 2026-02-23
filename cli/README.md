@@ -26,7 +26,7 @@ This tool uses the `uv` package manager for fast, reliable dependency management
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Navigate to the cli directory
-cd /path/to/Hanzo Studio/custom_nodes/Hanzo Studio-test-framework/cli
+cd /path/to/HanzoStudio/custom_nodes/HanzoStudio-test-framework/cli
 
 # Run directly with uv (no installation needed)
 ./comfyci.py --help
