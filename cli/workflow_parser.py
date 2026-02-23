@@ -1,4 +1,4 @@
-"""Parse ComfyUI test workflow JSON files and extract metadata."""
+"""Parse Hanzo Studio test workflow JSON files and extract metadata."""
 
 import json
 from dataclasses import dataclass

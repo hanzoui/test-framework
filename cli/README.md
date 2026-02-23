@@ -1,10 +1,10 @@
 # comfyci
 
-A CLI tool for running ComfyUI test workflows in CI/CD environments.
+A CLI tool for running Hanzo Studio test workflows in CI/CD environments.
 
 ## Overview
 
-`comfyci` is a standalone command-line tool that executes ComfyUI workflow tests against a running ComfyUI instance. It validates test execution, verifies that required nodes run or are cached, and reports results in a standard testing format.
+`comfyci` is a standalone command-line tool that executes Hanzo Studio workflow tests against a running Hanzo Studio instance. It validates test execution, verifies that required nodes run or are cached, and reports results in a standard testing format.
 
 ## Features
 
@@ -26,7 +26,7 @@ This tool uses the `uv` package manager for fast, reliable dependency management
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Navigate to the cli directory
-cd /path/to/ComfyUI/custom_nodes/ComfyUI-test-framework/cli
+cd /path/to/Hanzo Studio/custom_nodes/Hanzo Studio-test-framework/cli
 
 # Run directly with uv (no installation needed)
 ./comfyci.py --help
@@ -65,12 +65,12 @@ comfyci ./tests/**/*.json --cloud --op-entry Employee/TestCI
 ```
 Usage: comfyci [OPTIONS] PATTERNS...
 
-  Run ComfyUI test workflows.
+  Run Hanzo Studio test workflows.
 
   PATTERNS: Glob patterns for test workflow JSON files (e.g., ./tests/**/*.json)
 
 Options:
-  --server TEXT      ComfyUI server address (host:port)  [default: localhost:8188]
+  --server TEXT      Hanzo Studio server address (host:port)  [default: localhost:8188]
   --ssl              Use HTTPS/WSS for server connection
   --cloud            Use Comfy Cloud API (e.g., /jobs instead of /history)
   --cpu              Skip tests that require GPU
@@ -101,7 +101,7 @@ comfyci ./tests/**/*.json --failfast
 comfyci ./tests/**/*.json --timeout 300
 ```
 
-**Connect to remote ComfyUI instance:**
+**Connect to remote Hanzo Studio instance:**
 ```bash
 comfyci ./tests/**/*.json --server 192.168.1.100:8188
 ```
@@ -113,7 +113,7 @@ comfyci ./tests/**/*.json --cloud --ssl --op-entry Employee/TestCI
 
 ## Test Workflow Structure
 
-Test workflows are standard ComfyUI workflow JSON files with special test nodes:
+Test workflows are standard Hanzo Studio workflow JSON files with special test nodes:
 
 ### TestDefinition Node
 
@@ -202,7 +202,7 @@ Passed: 5
 Verbose mode shows detailed execution:
 
 ```
-Connecting to ComfyUI at localhost:8188...
+Connecting to Hanzo Studio at localhost:8188...
 Connected successfully
 
 [1/3] Image Generation Test
@@ -234,7 +234,7 @@ The tool is designed with future parallel execution in mind:
 ### Components
 
 - **workflow_parser.py**: Parses workflow JSON and extracts metadata
-- **comfy_client.py**: WebSocket and HTTP client for ComfyUI communication
+- **hanzo_client.py**: WebSocket and HTTP client for Hanzo Studio communication
   - `ComfyClient`: Manages connection (reusable)
   - `TestExecution`: Tracks individual test execution (isolated state)
 - **test_runner.py**: Execution strategies
@@ -279,7 +279,7 @@ To add a new output format (e.g., JUnit XML):
 ### Running Tests
 
 ```bash
-# Make sure ComfyUI is running
+# Make sure Hanzo Studio is running
 python -m comfy_ui.main
 
 # In another terminal, run tests
@@ -290,9 +290,9 @@ python -m comfy_ui.main
 
 ### Connection refused
 
-**Error**: `Failed to connect to ComfyUI at localhost:8188 after 5 attempts`
+**Error**: `Failed to connect to Hanzo Studio at localhost:8188 after 5 attempts`
 
-**Solution**: Make sure ComfyUI is running:
+**Solution**: Make sure Hanzo Studio is running:
 ```bash
 python main.py --listen 0.0.0.0 --port 8188
 ```
@@ -318,7 +318,7 @@ comfyci ./**/*.json
 **Solutions**:
 1. Increase timeout with `--timeout` flag
 2. Add `extraTime` to TestDefinition in your workflow
-3. Check if ComfyUI is actually processing the workflow
+3. Check if Hanzo Studio is actually processing the workflow
 
 ## License
 

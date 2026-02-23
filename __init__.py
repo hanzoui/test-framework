@@ -39,5 +39,5 @@ class TestFrameworkExtension(ComfyExtension):
 
 
 async def comfy_entrypoint() -> ComfyExtension:
-    """Entry point called by ComfyUI"""
+    """Entry point called by Hanzo Studio"""
     return TestFrameworkExtension()

@@ -1,20 +1,20 @@
 openapi: 3.0.3
 info:
-  title: ComfyUI API
+  title: Hanzo Studio API
   description: |
-    API for ComfyUI - A powerful and modular UI for Stable Diffusion.
+    API for Hanzo Studio - A powerful and modular UI for Stable Diffusion.
 
-    This API allows you to interact with ComfyUI programmatically, including:
+    This API allows you to interact with Hanzo Studio programmatically, including:
     - Retrieving prompt information
     - Retrieving node information
   version: 1.0.0
   license:
     name: GNU General Public License v3.0
-    url: https://github.com/comfyanonymous/ComfyUI/blob/master/LICENSE
+    url: https://github.com/hanzoai/studio/blob/master/LICENSE
 
 servers:
   - url: /
-    description: Default ComfyUI server
+    description: Default Hanzo Studio server
 
 tags:
   - name: workflow
@@ -512,7 +512,7 @@ paths:
         - file
       summary: View a file
       description: |
-        Retrieve and view a file from the ComfyUI file system.
+        Retrieve and view a file from the Hanzo Studio file system.
         This endpoint is typically used to view generated images or other output files.
       operationId: viewFile
       parameters:
@@ -522,7 +522,7 @@ paths:
           description: Name of the file to view
           schema:
             type: string
-            example: "ComfyUI_00004_.png"
+            example: "Hanzo Studio_00004_.png"
         - name: subfolder
           in: query
           required: false
@@ -1836,7 +1836,7 @@ paths:
       tags:
         - feedback
       summary: Submit user feedback
-      description: Submit feedback about the ComfyUI service
+      description: Submit feedback about the Hanzo Studio service
       operationId: submitFeedback
       requestBody:
         required: true
@@ -2322,7 +2322,7 @@ paths:
       tags:
         - system
       summary: Get system statistics
-      description: Returns system statistics including ComfyUI version, device info, and system resources
+      description: Returns system statistics including Hanzo Studio version, device info, and system resources
       operationId: getSystemStats
       responses:
         '200':
@@ -2841,7 +2841,7 @@ components:
               Queue item tuple format: [job_number, prompt_id, workflow_json, output_node_ids, metadata]
               - [0] job_number (integer): Position in queue (1-based)
               - [1] prompt_id (string): Job UUID
-              - [2] workflow_json (object): Full ComfyUI workflow
+              - [2] workflow_json (object): Full Hanzo Studio workflow
               - [3] output_node_ids (array): Node IDs to return results from
               - [4] metadata (object): Contains {create_time: <milliseconds>}
         queue_pending:
@@ -2853,7 +2853,7 @@ components:
               Queue item tuple format: [job_number, prompt_id, workflow_json, output_node_ids, metadata]
               - [0] job_number (integer): Position in queue (1-based)
               - [1] prompt_id (string): Job UUID
-              - [2] workflow_json (object): Full ComfyUI workflow
+              - [2] workflow_json (object): Full Hanzo Studio workflow
               - [3] output_node_ids (array): Node IDs to return results from
               - [4] metadata (object): Contains {create_time: <milliseconds>}
 
@@ -2970,7 +2970,7 @@ components:
           description: UNIX timestamp of the last modification.
     PromptErrorResponse:
       type: object
-      description: Error response for ComfyUI prompt execution.
+      description: Error response for Hanzo Studio prompt execution.
       additionalProperties: true
 
     ModelFolder:
@@ -3024,7 +3024,7 @@ components:
           type: integer
           minimum: 1
           maximum: 5
-          description: User's rating of ComfyUI Cloud experience (1-5 stars)
+          description: User's rating of Hanzo Studio Cloud experience (1-5 stars)
         metadata:
           type: object
           description: Additional metadata about the feedback
@@ -3104,7 +3104,7 @@ components:
             - os
             - python_version
             - embedded_python
-            - comfyui_version
+            - hanzo_studio_version
             - pytorch_version
             - argv
             - ram_total
@@ -3119,12 +3119,12 @@ components:
             embedded_python:
               type: boolean
               description: Whether using embedded Python
-            comfyui_version:
+            hanzo_studio_version:
               type: string
-              description: ComfyUI version
-            comfyui_frontend_version:
+              description: Hanzo Studio version
+            hanzo_studio_frontend_version:
               type: string
-              description: ComfyUI frontend version (commit hash or tag)
+              description: Hanzo Studio frontend version (commit hash or tag)
             workflow_templates_version:
               type: string
               description: Workflow templates version
@@ -3629,7 +3629,7 @@ components:
           description: User-friendly job status
         workflow:
           type: object
-          description: Full ComfyUI workflow (10-100KB)
+          description: Full Hanzo Studio workflow (10-100KB)
           additionalProperties: true
         error_message:
           type: string
@@ -3646,7 +3646,7 @@ components:
         outputs:
           type: object
           nullable: true
-          description: Full outputs object from ComfyUI (only for terminal states)
+          description: Full outputs object from Hanzo Studio (only for terminal states)
           additionalProperties: true
         preview_output:
           type: object
@@ -3659,7 +3659,7 @@ components:
         execution_status:
           type: object
           nullable: true
-          description: ComfyUI execution status and timeline (only for terminal states)
+          description: Hanzo Studio execution status and timeline (only for terminal states)
           additionalProperties: true
         execution_meta:
           type: object

@@ -1,5 +1,5 @@
 #!/usr/bin/env -S uv run
-"""ComfyCI - CLI tool for running ComfyUI test workflows."""
+"""ComfyCI - CLI tool for running Hanzo Studio test workflows."""
 
 import subprocess
 import sys
@@ -30,7 +30,7 @@ def get_op_secret(op_exe: str, entry: str, field: str) -> str:
     '--server',
     default='localhost:8188',
     envvar='COMFY_SERVER',
-    help='ComfyUI server address (host:port)',
+    help='Hanzo Studio server address (host:port)',
     show_default=True,
 )
 @click.option(
@@ -93,7 +93,7 @@ def main(
     op_entry: str | None,
 ):
     """
-    Run ComfyUI test workflows.
+    Run Hanzo Studio test workflows.
 
     PATTERNS: Glob patterns for test workflow JSON files (e.g., ./tests/**/*.json)
 
@@ -141,9 +141,9 @@ def main(
                 # Override timeout calculation
                 test._custom_timeout = timeout
 
-        # Connect to ComfyUI
+        # Connect to Hanzo Studio
         if verbose:
-            print(f"Connecting to ComfyUI at {server}...")
+            print(f"Connecting to Hanzo Studio at {server}...")
 
         # Fetch credentials from 1Password if --op-entry is provided
         if op_entry:
@@ -174,7 +174,7 @@ def main(
                 print("Connected successfully\n")
         except ServerUnreachableError as e:
             print(f"Error: {e}", file=sys.stderr)
-            print(f"\nMake sure ComfyUI is running at {server}", file=sys.stderr)
+            print(f"\nMake sure Hanzo Studio is running at {server}", file=sys.stderr)
             sys.exit(1)
 
         # Run tests

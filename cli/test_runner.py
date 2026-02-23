@@ -52,7 +52,7 @@ class ExecutionStrategy(ABC):
 
         Args:
             tests: List of WorkflowTest objects to execute
-            client: Connected ComfyUI client
+            client: Connected Hanzo Studio client
             verbose: Enable verbose output
             failfast: Stop on first failure
 
@@ -101,7 +101,7 @@ class SequentialExecutor(ExecutionStrategy):
 
         Args:
             test: WorkflowTest to execute
-            client: Connected ComfyUI client
+            client: Connected Hanzo Studio client
             verbose: Enable verbose output
 
         Returns:
@@ -210,7 +210,7 @@ class TestRunner:
 
         Args:
             tests: List of WorkflowTest objects
-            client: Connected ComfyUI client
+            client: Connected Hanzo Studio client
             verbose: Enable verbose output
             failfast: Stop on first failure
 

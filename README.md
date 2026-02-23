@@ -1,12 +1,12 @@
-# ComfyUI Test Framework
+# Hanzo Studio Test Framework
 
-A testing framework for ComfyUI workflows. Provides custom nodes for defining tests and assertions, plus a CLI tool for running tests in CI/CD environments.
+A testing framework for Hanzo Studio workflows. Provides custom nodes for defining tests and assertions, plus a CLI tool for running tests in CI/CD environments.
 
 ## Features
 
 - **Test Definition Nodes**: Define test metadata, GPU requirements, and timeouts
 - **Assertion Nodes**: Validate values, images, tensors, and execution state
-- **CLI Tool (`comfyci`)**: Run test workflows against a ComfyUI instance
+- **CLI Tool (`comfyci`)**: Run test workflows against a Hanzo Studio instance
 - **Perceptual Hashing**: Compare images using difference hashing (dHash)
 - **CI/CD Ready**: Designed for automated testing pipelines
 
@@ -14,21 +14,21 @@ A testing framework for ComfyUI workflows. Provides custom nodes for defining te
 
 ### As a Custom Node
 
-Clone this repository into your ComfyUI custom nodes directory:
+Clone this repository into your Hanzo Studio custom nodes directory:
 
 ```bash
-cd ComfyUI/custom_nodes
-git clone https://github.com/Comfy-Org/ComfyUI-test-framework.git
+cd Hanzo Studio/custom_nodes
+git clone https://github.com/hanzoui/studio-test-framework.git
 ```
 
-Restart ComfyUI to load the test nodes.
+Restart Hanzo Studio to load the test nodes.
 
 ### CLI Tool
 
 The CLI tool uses [uv](https://github.com/astral-sh/uv) for dependency management:
 
 ```bash
-cd ComfyUI-test-framework/cli
+cd Hanzo Studio-test-framework/cli
 
 # Run directly with uv
 ./comfyci.py --help
@@ -113,12 +113,12 @@ The **Assert Image Match** node uses perceptual hashing to compare images:
 ```
 Usage: comfyci [OPTIONS] PATTERNS...
 
-  Run ComfyUI test workflows.
+  Run Hanzo Studio test workflows.
 
   PATTERNS: Glob patterns for test workflow JSON files (e.g., ./tests/**/*.json)
 
 Options:
-  --server TEXT      ComfyUI server address (host:port)  [default: localhost:8188]
+  --server TEXT      Hanzo Studio server address (host:port)  [default: localhost:8188]
   --ssl              Use HTTPS/WSS for server connection
   --cloud            Use Comfy Cloud API (e.g., /jobs instead of /history)
   --cpu              Skip tests that require GPU

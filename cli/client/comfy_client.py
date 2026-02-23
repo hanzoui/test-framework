@@ -1,4 +1,4 @@
-"""Unified ComfyUI client supporting any server with optional authentication."""
+"""Unified Hanzo Studio client supporting any server with optional authentication."""
 
 import json
 import time
@@ -24,11 +24,11 @@ from .models import TestExecution
 
 class ComfyClient:
     """
-    Unified client for any ComfyUI server.
+    Unified client for any Hanzo Studio server.
 
     Works with:
     - Local servers: ComfyClient("localhost:8188")
-    - Cloud servers: ComfyClient("cloud.comfy.org", email="...", password="...", api_key="...")
+    - Cloud servers: ComfyClient("cloud.hanzo.ai", email="...", password="...", api_key="...")
     - Custom servers: ComfyClient("myserver.com:443", use_ssl=True)
 
     Authentication is optional - only used when credentials are provided.
@@ -241,7 +241,7 @@ class ComfyClient:
         Execute workflow and track completion via WebSocket.
 
         Args:
-            workflow: ComfyUI workflow dictionary
+            workflow: Hanzo Studio workflow dictionary
             timeout: Maximum seconds to wait for completion
             verbose: Print progress messages
 

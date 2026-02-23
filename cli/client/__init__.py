@@ -1,8 +1,8 @@
-"""ComfyUI client package."""
+"""Hanzo Studio client package."""
 
 import os
 
-from .comfy_client import ComfyClient
+from .hanzo_client import ComfyClient
 from .errors import (
     APIError,
     AuthenticationError,
@@ -50,11 +50,11 @@ def create_client(
         client = create_client("localhost:8188")
 
         # Cloud with env vars
-        client = create_client("cloud.comfy.org", use_ssl=True, cloud=True)
+        client = create_client("cloud.hanzo.ai", use_ssl=True, cloud=True)
 
         # Cloud with explicit credentials
         client = create_client(
-            "cloud.comfy.org",
+            "cloud.hanzo.ai",
             use_ssl=True,
             cloud=True,
             email="user@example.com",

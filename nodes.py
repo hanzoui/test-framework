@@ -330,7 +330,7 @@ class AssertImageMatch(io.ComfyNode):
         Calculate difference hash (dHash) using minimal dependencies
 
         Args:
-            image_tensor: ComfyUI IMAGE format [B,H,W,C]
+            image_tensor: Hanzo Studio IMAGE format [B,H,W,C]
             hash_size: Size of hash grid (8 = 64-bit hash)
 
         Returns:

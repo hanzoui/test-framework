@@ -321,7 +321,7 @@ class FeedbackRequest(BaseModel):
     rating: Annotated[
         int | None,
         Field(
-            description="User's rating of ComfyUI Cloud experience (1-5 stars)",
+            description="User's rating of Hanzo Studio Cloud experience (1-5 stars)",
             ge=1,
             le=5,
         ),
@@ -383,9 +383,9 @@ class System(BaseModel):
     os: Annotated[str, Field(description='Operating system')]
     python_version: Annotated[str, Field(description='Python version')]
     embedded_python: Annotated[bool, Field(description='Whether using embedded Python')]
-    comfyui_version: Annotated[str, Field(description='ComfyUI version')]
-    comfyui_frontend_version: Annotated[
-        str | None, Field(description='ComfyUI frontend version (commit hash or tag)')
+    hanzo_studio_version: Annotated[str, Field(description='Hanzo Studio version')]
+    hanzo_studio_frontend_version: Annotated[
+        str | None, Field(description='Hanzo Studio frontend version (commit hash or tag)')
     ] = None
     workflow_templates_version: Annotated[
         str | None, Field(description='Workflow templates version')
@@ -652,7 +652,7 @@ class JobDetailResponse(BaseModel):
     id: Annotated[UUID, Field(description='Unique job identifier')]
     status: Annotated[Status1, Field(description='User-friendly job status')]
     workflow: Annotated[
-        dict[str, Any] | None, Field(description='Full ComfyUI workflow (10-100KB)')
+        dict[str, Any] | None, Field(description='Full Hanzo Studio workflow (10-100KB)')
     ] = None
     error_message: Annotated[
         str | None, Field(description='Error message if job failed')
@@ -666,7 +666,7 @@ class JobDetailResponse(BaseModel):
     outputs: Annotated[
         dict[str, Any] | None,
         Field(
-            description='Full outputs object from ComfyUI (only for terminal states)'
+            description='Full outputs object from Hanzo Studio (only for terminal states)'
         ),
     ] = None
     preview_output: Annotated[
@@ -680,7 +680,7 @@ class JobDetailResponse(BaseModel):
     execution_status: Annotated[
         dict[str, Any] | None,
         Field(
-            description='ComfyUI execution status and timeline (only for terminal states)'
+            description='Hanzo Studio execution status and timeline (only for terminal states)'
         ),
     ] = None
     execution_meta: Annotated[

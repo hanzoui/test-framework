@@ -1,13 +1,13 @@
 [project]
 name = "comfyci"
 version = "0.1.0"
-description = "CLI tool for running ComfyUI test workflows"
+description = "CLI tool for running Hanzo Studio test workflows"
 readme = "README.md"
 requires-python = ">=3.10"
 license = "MIT"
 authors = [
-    {name = "Jacob Segal", email = "jacob@comfy.org"},
-    {name = "Comfy-Org", email = "hello@comfy.org"}
+    {name = "Jacob Segal", email = "jacob@hanzo.ai"},
+    {name = "hanzoui", email = "hello@hanzo.ai"}
 ]
 dependencies = [
     "click>=8.1.0",
@@ -23,9 +23,9 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/Comfy-Org/ComfyUI-test-framework"
-Repository = "https://github.com/Comfy-Org/ComfyUI-test-framework"
-Issues = "https://github.com/Comfy-Org/ComfyUI-test-framework/issues"
+Homepage = "https://github.com/hanzoui/studio-test-framework"
+Repository = "https://github.com/hanzoui/studio-test-framework"
+Issues = "https://github.com/hanzoui/studio-test-framework/issues"
 
 [project.scripts]
 comfyci = "comfyci:main"

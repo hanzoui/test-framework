@@ -1,7 +1,7 @@
 import { app } from "../../scripts/app.js";
 
 /**
- * ComfyUI Test Framework Extension
+ * Hanzo Studio Test Framework Extension
  *
  * Automatically adds API format to workflows that contain TestDefinition nodes
  * when they are exported. This allows test workflows to be executed directly

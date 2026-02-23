@@ -14,7 +14,7 @@ class ComfyClientError(Exception):
 
 # Connection errors
 class ConnectionError(ComfyClientError):
-    """Failed to connect to ComfyUI server."""
+    """Failed to connect to Hanzo Studio server."""
 
 
 class ServerUnreachableError(ConnectionError):
